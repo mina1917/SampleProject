@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AssemblyName>SampleProject.Domain</AssemblyName>
+		<RootNamespace>SampleProject.Domain</RootNamespace>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Exceptions\**" />
+		<EmbeddedResource Remove="Exceptions\**" />
+		<None Remove="Exceptions\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="IdentityServer4" Version="4.1.2" />
+		<PackageReference Include="IdentityServer4.Storage" Version="4.1.2" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SampleProject.Framework\SampleProject.Framework.csproj" />
+		<ProjectReference Include="..\SampleProject.Query\SampleProject.Query.csproj" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AssemblyName>SampleProject.WebApi</AssemblyName>
+		<RootNamespace>SampleProject.WebApi</RootNamespace>
+		<UserSecretsId>ec948523-c785-49c3-b72c-e2fa771bd5e6</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..\..</DockerfileContext>
+		<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Configuration\**" />
+		<Compile Remove="logs\**" />
+		<Compile Remove="Services\**" />
+		<Content Remove="logs\**" />
+		<Content Remove="Services\**" />
+		<EmbeddedResource Remove="logs\**" />
+		<EmbeddedResource Remove="Services\**" />
+		<None Remove="logs\**" />
+		<None Remove="Services\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="IdentityModel" Version="6.0.0" />
+		<PackageReference Include="IdentityServer4" Version="4.1.2" />
+		<PackageReference Include="MicroElements.Swashbuckle.FluentValidation" Version="5.4.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.2">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+		<PackageReference Include="Serilog.Sinks.Elasticsearch" Version="8.4.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.2.3" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.1.5" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="files\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\SampleProject.Application\SampleProject.Application.csproj" />
+	  <ProjectReference Include="..\SampleProject.Framework\SampleProject.Framework.csproj" />
+	  <ProjectReference Include="..\SampleProject.Messaging\SampleProject.Messaging.csproj" />
+	  <ProjectReference Include="..\SampleProject.Persistence\SampleProject.Persistence.csproj" />
+	  <ProjectReference Include="..\SampleProject.Query\SampleProject.Query.csproj" />
+	</ItemGroup>
+
+</Project>

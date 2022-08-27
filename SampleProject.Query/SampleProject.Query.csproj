@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AssemblyName>SampleProject.Query</AssemblyName>
+		<RootNamespace>SampleProject.Query</RootNamespace>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Dtos\**" />
+		<Compile Remove="Factories\**" />
+		<Compile Remove="Profiles\**" />
+		<Compile Remove="Specefications\**" />
+		<EmbeddedResource Remove="Dtos\**" />
+		<EmbeddedResource Remove="Factories\**" />
+		<EmbeddedResource Remove="Profiles\**" />
+		<EmbeddedResource Remove="Specefications\**" />
+		<None Remove="Dtos\**" />
+		<None Remove="Factories\**" />
+		<None Remove="Profiles\**" />
+		<None Remove="Specefications\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="11.0.1" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+		<PackageReference Include="IdentityModel" Version="6.0.0" />
+		<PackageReference Include="IdentityServer4" Version="4.1.2" />
+		<PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+		<PackageReference Include="MediatR" Version="10.0.1" />
+		<PackageReference Include="MediatR.Extensions.FluentValidation.AspNetCore" Version="2.0.0" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.17.0" />
+		<PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.17.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\SampleProject.Framework\SampleProject.Framework.csproj" />
+	</ItemGroup>
+</Project>
